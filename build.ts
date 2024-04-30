@@ -1,9 +1,11 @@
 import esbuild from 'esbuild';
 
-await esbuild.build({
+esbuild.build({
   bundle: true,
   entryPoints: ['./src/main.ts'],
   outdir: './dist',
   platform: 'node',
-  format: 'esm',
+  format: 'cjs',
+}).then(()=> {
+  console.log('Build successful');
 })

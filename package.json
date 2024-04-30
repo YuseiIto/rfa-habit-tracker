@@ -1,7 +1,6 @@
 {
   "name": "rfa-habit-tracker",
   "version": "1.0.0",
-  "type": "module",
   "description": "Yusei's RFA habit tracker.",
   "main": "dist/main.js",
   "scripts": {
