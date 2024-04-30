@@ -1,2 +1,10 @@
+# Nodejs
 node_modules
 dist
+
+# terraform
+.terraform
+*.tfvars
+*.tfstate
+*.tfstate.backup
+archive
