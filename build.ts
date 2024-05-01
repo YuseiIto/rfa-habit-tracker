@@ -6,6 +6,6 @@ esbuild.build({
   outdir: './dist',
   platform: 'node',
   format: 'cjs',
-}).then(()=> {
+}).then(() => {
   console.log('Build successful');
 })
