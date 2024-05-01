@@ -1,10 +1,19 @@
-import { Handler } from 'aws-lambda';
+import type { Context, LambdaFunctionURLHandler, LambdaFunctionURLEvent, LambdaFunctionURLResult } from 'aws-lambda'
 
-exports.handler = async (event) => {
 
-    const response = {
-        statusCode: 200,
-        body: "Hello World!",
-    };
-    return response;
-};
+const handler: LambdaFunctionURLHandler = async (event: LambdaFunctionURLEvent, _context: Context): Promise<LambdaFunctionURLResult> => {
+
+	const method = event.requestContext.http.method;
+
+
+	const response: LambdaFunctionURLResult = {
+		statusCode: 200,
+		body: JSON.stringify({
+			message: 'Hello World',
+		}),
+	}
+
+	return response
+}
+
+exports.handler = handler

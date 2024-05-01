@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@aspida/axios": "^1.14.0",
+    "@types/aws-lambda": "^8.10.137",
     "aspida": "^1.14.0",
     "axios": "^1.6.8"
   }
