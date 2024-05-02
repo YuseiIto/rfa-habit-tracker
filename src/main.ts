@@ -2,6 +2,7 @@ import type { Context, LambdaFunctionURLHandler, LambdaFunctionURLEvent, LambdaF
 import { match } from 'ts-pattern'
 import { startWorkout } from './start_workout'
 import { endWorkout } from './end_workout'
+import { configure, Env } from './config'
 
 const METHOD_NOT_ALLOWED_RESPONSE = {
 	statusCode: 405,
@@ -24,9 +25,11 @@ const handler: LambdaFunctionURLHandler = async (event: LambdaFunctionURLEvent, 
 
 	const kind = event.queryStringParameters?.kind;
 
+	const env: Env = configure();
+
 	const response = match(kind)
-		.with('start_workout', async () => await startWorkout())
-		.with('end_workout', async () => await endWorkout())
+		.with('start_workout', async () => await startWorkout(env))
+		.with('end_workout', async () => await endWorkout(env))
 		.otherwise(() => BAD_REQUEST_RESPONSE);
 
 	return response;

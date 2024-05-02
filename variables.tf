@@ -20,3 +20,19 @@ variable "aws_secret_key" {
   type        = string
   sensitive   = true
 }
+
+variable "pixela_username" {
+  description = "Pixela username"
+  type        = string
+}
+
+variable "pixela_token" {
+  description = "Pixela token"
+  type        = string
+  sensitive   = true
+}
+
+variable "pixela_graph_id" {
+  description = "Pixela graph id"
+  type        = string
+}

@@ -32,6 +32,14 @@ resource "aws_lambda_function" "function" {
   role = aws_iam_role.lambda_role.arn
   runtime = "nodejs20.x"
 
+  environment  {
+    variables = {
+      PIXELA_USERNAME = var.pixela_username
+      PIXELA_TOKEN = var.pixela_token
+      PIXELA_GRAPH_ID = var.pixela_graph_id
+    }
+  }
+
   filename = data.archive_file.function_source.output_path
   source_code_hash = data.archive_file.function_source.output_base64sha256
 }
