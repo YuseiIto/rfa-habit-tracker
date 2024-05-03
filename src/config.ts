@@ -10,16 +10,16 @@ export const configure = (): Env => {
 	const pixelaGraphId = process.env.PIXELA_GRAPH_ID;
 
 	if (!pixelaUsername) {
-		throw new Error('PIXELA_USERNAME is not defined');
+		throw new Error("PIXELA_USERNAME is not defined");
 	}
 
 	if (!pixelaToken) {
-		throw new Error('PIXELA_TOKEN is not defined');
+		throw new Error("PIXELA_TOKEN is not defined");
 	}
 
 	if (!pixelaGraphId) {
-		throw new Error('PIXELA_GRAPH_ID is not defined');
+		throw new Error("PIXELA_GRAPH_ID is not defined");
 	}
 
 	return { pixelaUsername, pixelaToken, pixelaGraphId };
-}
+};

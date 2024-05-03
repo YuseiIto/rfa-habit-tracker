@@ -8,7 +8,8 @@
     "test": "jest",
     "start": "node dist/main.js",
     "fmt": "biome format --write ./src",
-    "build:aspida": "aspida"
+    "build:aspida": "aspida",
+    "check": "biome check --apply ./src"
   },
   "repository": {
     "type": "git",
